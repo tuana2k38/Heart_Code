@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" type="image/png" href="image/favicon.ico">
-    <title>Anh <3 Em</title>
+    <title>No title </title>
             <link type="text/css" rel="stylesheet" href="./renxi/default.css">
             <script type="text/javascript" src="./renxi/jquery.min.js"></script>
             <script type="text/javascript" src="./renxi/jscex.min.js"></script>
@@ -25,9 +25,11 @@
 </head>
 
 <body>
-    <audio autoplay>
-        <source src="music/I-Do-911.mp3">
-    </audio>
+<audio autoplay loop  id="myautoload">
+    <source src="./music/I-Do-911.mp3">
+    Your browser does not support the audio element.
+</audio>
+
     <div id="main">
         <div id="error">Trình duyệt của bạn không được hỗ trợ. Hoặc sử dụng (<a
                 href="http://www.google.cn/chrome">Chrome</a>) và (<a href="http://firefox.com/download/">Firefox</a>)
@@ -62,10 +64,6 @@
         </div>
 
     </div>
-
-    <script>
-    </script>
-
     <script>
         (function () {
             var canvas = $('#canvas');
@@ -74,6 +72,7 @@
                 $("#error").show();
                 return false;
             }
+            var myadido = document.getElementById("myautoload");
 
             var width = canvas.width();
             var height = canvas.height();
@@ -130,6 +129,7 @@
                     canvas.unbind("mousemove");
                     canvas.removeClass('hand');
                 }
+                myadido.play();
             }).mousemove(function (e) {
                 var offset = canvas.offset(), x, y;
                 x = e.pageX - offset.left;
@@ -194,7 +194,7 @@
 
             var textAnimate = eval(Jscex.compile("async", function () {
                 var together = new Date();
-                together.setFullYear(2023, 4, 12);
+                together.setFullYear(year = 2023, month = 3, date = 12);
                 together.setHours(0);
                 together.setMinutes(0);
                 together.setSeconds(0);
